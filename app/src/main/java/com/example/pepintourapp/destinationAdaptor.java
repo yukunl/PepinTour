@@ -40,7 +40,7 @@ public class destinationAdaptor extends BaseAdapter {
     public View getView(int position, View view, ViewGroup viewGroup) {
         View rowView = view;
         if(rowView == null){
-            rowView == LayoutInflater.from(dContext).inflate(R.layout.layout_item,null);
+            rowView = LayoutInflater.from(dContext).inflate(R.layout.layout_item,null);
             TextView name = (TextView) rowView.findViewById(R.id.label);
             ImageView image = (ImageView) rowView.findViewById(R.id.image);
 
