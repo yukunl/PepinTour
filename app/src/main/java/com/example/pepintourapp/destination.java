@@ -19,6 +19,10 @@ public class destination {
         return ImageURL;
     }
 
+    public String getDescription() { return ""; }
+
+    public int getImage() { return 0;}
+
     public void setImageURL(String imageURL) {
         ImageURL = imageURL;
     }
