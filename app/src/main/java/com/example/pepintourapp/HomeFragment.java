@@ -3,6 +3,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.support.v4.app.*;
 import android.os.Bundle;
 import android.text.Layout;
@@ -32,6 +33,9 @@ public class HomeFragment extends Fragment {
         Button feedBackButton = (Button) v.findViewById(R.id.feedback);
         Button aboutUsButton = (Button) v.findViewById(R.id.aboutus);
 
+        Button chooseDestinationButton = (Button)v.findViewById(R.id.mydest);
+
+
 
         helpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +62,16 @@ public class HomeFragment extends Fragment {
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
                 fr.replace(R.id.fragment_container_home, new FeedbackFragment());
                 fr.commit();
+            }
+        });
+
+        chooseDestinationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(getActivity(), choose_destination.class);
+                in.putExtra("Some", "random strings for testing");
+                Log.i("tag", "I AM HEREEE!");
+                startActivity (in);
             }
         });
 
