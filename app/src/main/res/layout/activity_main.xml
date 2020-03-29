@@ -6,85 +6,88 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+<!--
+I placed all this commented text into the fragment_home.xml file. When you click the home button, it will show the buttons.
+-->
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="326dp"
-        android:layout_height="74dp"
-        android:text="Pepin Walking Tour"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.294"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.089" />
+<!--    <TextView-->
+<!--        android:id="@+id/title"-->
+<!--        android:layout_width="326dp"-->
+<!--        android:layout_height="74dp"-->
+<!--        android:text="Pepin Walking Tour"-->
+<!--        android:textSize="36sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.294"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.089" />-->
 
-    <TextView
-        android:id="@+id/welcome"
-        android:layout_width="332dp"
-        android:layout_height="56dp"
-        android:text="Welcome to the Town of Pepin!"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.67"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.183" />
+<!--    <TextView-->
+<!--        android:id="@+id/welcome"-->
+<!--        android:layout_width="332dp"-->
+<!--        android:layout_height="56dp"-->
+<!--        android:text="Welcome to the Town of Pepin!"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.67"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.183" />-->
 
-    <Button
-        android:id="@+id/tours"
-        android:layout_width="180dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="180dp"
-        android:text="Tours"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <Button-->
+<!--        android:id="@+id/tours"-->
+<!--        android:layout_width="180dp"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:layout_marginStart="25dp"-->
+<!--        android:layout_marginLeft="25dp"-->
+<!--        android:layout_marginTop="180dp"-->
+<!--        android:text="Tours"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.456"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <Button
-        android:id="@+id/help"
-        android:layout_width="180dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="20dp"
-        android:text="Help"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tours" />
+<!--    <Button-->
+<!--        android:id="@+id/help"-->
+<!--        android:layout_width="180dp"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:layout_marginStart="25dp"-->
+<!--        android:layout_marginLeft="25dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:text="Help"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.456"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tours" />-->
 
-    <Button
-        android:id="@+id/aboutus"
-        android:layout_width="180dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="20dp"
-        android:text="About Us"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/help" />
+<!--    <Button-->
+<!--        android:id="@+id/aboutus"-->
+<!--        android:layout_width="180dp"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:layout_marginStart="25dp"-->
+<!--        android:layout_marginLeft="25dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:text="About Us"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.456"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/help" />-->
 
 
-    <Button
-        android:id="@+id/feedback"
-        android:layout_width="180dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="20dp"
-        android:text="Feedback"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aboutus" />
+<!--    <Button-->
+<!--        android:id="@+id/feedback"-->
+<!--        android:layout_width="180dp"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:layout_marginStart="25dp"-->
+<!--        android:layout_marginLeft="25dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:text="Feedback"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.456"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/aboutus" />-->
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -108,5 +111,11 @@
         android:orientation="vertical"
         app:layout_constraintGuide_begin="156dp" />
 
+    <FrameLayout
+        android:id = "@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above = "@id/bottom_navigation"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
