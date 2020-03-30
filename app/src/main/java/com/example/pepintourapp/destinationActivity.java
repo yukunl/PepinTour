@@ -10,19 +10,19 @@ import android.widget.ImageView;
 
 public class destinationActivity extends AppCompatActivity {
 
-    destination currDest = new destination("temp", "temp");
+    destination currDest = new destination("temp");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ImageView img= (ImageView) findViewById(R.id.imageView);
-        img.setImageResource(currDest.getImage());
+        img.setImageResource(currDest.getFileName());
         EditText myTextField = (EditText) findViewById(R.id.editText);
         myTextField.setText(currDest.getDescription());
         setContentView(R.layout.activity_destination);
     }
 
     public void backFunction(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, choose_destination.class);
         startActivity(intent);
     }
 
