@@ -70,6 +70,9 @@ public class HomeFragment extends Fragment  {
 
 
 
+        Button chooseDestinationButton = (Button)v.findViewById(R.id.mydest);
+
+
 
         helpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +99,16 @@ public class HomeFragment extends Fragment  {
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
                 fr.replace(R.id.fragment_container_home, new FeedbackFragment());
                 fr.commit();
+            }
+        });
+
+        chooseDestinationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(getActivity(), choose_destination.class);
+                in.putExtra("Some", "random strings for testing");
+                Log.i("tag", "I AM HEREEE!");
+                startActivity (in);
             }
         });
 
