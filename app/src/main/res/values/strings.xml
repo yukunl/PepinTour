@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PepinTourApp</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

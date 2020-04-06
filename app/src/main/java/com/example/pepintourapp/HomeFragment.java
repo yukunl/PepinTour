@@ -3,6 +3,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.support.v4.app.*;
 import android.os.Bundle;
 import android.text.Layout;
@@ -14,11 +15,35 @@ import android.widget.Button;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class HomeFragment extends Fragment {
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+
+
+
+
+
+public class HomeFragment extends Fragment  {
+
+
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.fragment_home);
+//
+//
+//        //Code for creating the navbar on the bottom of the app, and setting default page to the homeFragment (fragment_home.xml)
+//
+//        //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+//    }
 
 
     @Nullable
@@ -31,6 +56,19 @@ public class HomeFragment extends Fragment {
         Button helpButton = (Button) v.findViewById(R.id.help);
         Button feedBackButton = (Button) v.findViewById(R.id.feedback);
         Button aboutUsButton = (Button) v.findViewById(R.id.aboutus);
+//        Button chooseDestinationButton = (Button)v.findViewById(R.id.mydest);
+//
+//
+//        chooseDestinationButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent in = new Intent(getActivity(), choose_destination.class);
+//                in.putExtra("Some", "random strings for testing");
+//                startActivity (in);
+//            }
+//        });
+
+
 
 
         helpButton.setOnClickListener(new View.OnClickListener() {

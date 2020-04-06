@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/brown">
 
 
     <TextView
@@ -32,6 +33,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.183" />
+
+<!--    <Button-->
+<!--        android:id="@+id/mydest"-->
+<!--        android:layout_width="180dp"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:layout_marginStart="25dp"-->
+<!--        android:layout_marginLeft="25dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:text="choose dest"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.456"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/feedback" />-->
 
     <Button
         android:id="@+id/tours"
@@ -113,7 +127,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bottom_navigation"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-56dp" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-292dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
