@@ -45,7 +45,7 @@ public class destinationAdaptor extends BaseAdapter {
             ImageView image = (ImageView) rowView.findViewById(R.id.image);
 
             //Set Data
-            Picasso.with(dContext).load(destList.get(position).getImageURL()).into(image);
+          //  Picasso.with(dContext).load(destList.get(position).getImageURL()).into(image);
             name.setText(destList.get(position).getName());
         }
         return rowView;

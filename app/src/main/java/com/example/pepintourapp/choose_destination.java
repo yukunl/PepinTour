@@ -63,7 +63,7 @@ public class choose_destination extends AppCompatActivity {
  }
 
  private void initData(){
-     dList.add(new destination("little cabin", "https://sitesandstories.wordpress.com/2011/08/02/looking-for-laura/pepin-cabin-side-view/"));
+    // dList.add(new destination("little cabin", "https://sitesandstories.wordpress.com/2011/08/02/looking-for-laura/pepin-cabin-side-view/"));
 
  }
 
