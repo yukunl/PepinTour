@@ -86,7 +86,7 @@
         android:layout_marginEnd="54dp"
         android:layout_marginRight="54dp"
         android:layout_marginBottom="41dp"
-        android:text="715-442-2461 is the number to contact the pepin business area between monday and griday from 8 am to 4 pm"
+        android:text="715-442-2461 is the number to contact the pepin business area between monday and friday from 8 am to 4 pm"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView3"

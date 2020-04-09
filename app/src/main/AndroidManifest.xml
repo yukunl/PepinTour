@@ -32,6 +32,7 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".destinationActivity" />
+        <activity android:name="choose_destination" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
