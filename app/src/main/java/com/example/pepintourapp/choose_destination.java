@@ -32,17 +32,14 @@ public class choose_destination extends AppCompatActivity {
     // Bundle bundle = getIntent().getExtras();
      initData();
      dtitle = findViewById(R.id.title);
-     Log.i("tag", "I AM before setFactory!");
      dtitle.setFactory(new ViewSwitcher.ViewFactory() {
          @Override
          public View makeView() {
              LayoutInflater inflater = LayoutInflater.from(choose_destination.this);
-             Log.i("tag", "I AM before txt!");
              TextView txt = (TextView)inflater.inflate(R.layout.layout_title,null);
              return txt;
          }
      });
-     Log.i("tag", "I AM before animation!");
      Animation in = AnimationUtils.loadAnimation(this, R.anim.slide_in_top);
      Animation out = AnimationUtils.loadAnimation(this, R.anim.slide_out_bottom);
      dtitle.setInAnimation(in);
