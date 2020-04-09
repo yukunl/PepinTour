@@ -62,7 +62,7 @@ public class choose_destination extends AppCompatActivity {
 
          }
      });
-
+// test commit
  }
 
  private void initData(){
