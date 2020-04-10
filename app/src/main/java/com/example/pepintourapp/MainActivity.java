@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 //
 //
 //        //Code for creating the navbar on the bottom of the app, and setting default page to the homeFragment (fragment_home.xml)
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
