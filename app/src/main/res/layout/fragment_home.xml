@@ -4,14 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white">
 
-
+    <androidx.constraintlayout.widget.ConstraintLayout  android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <TextView
         android:id="@+id/title"
         android:layout_width="326dp"
         android:layout_height="74dp"
         android:text="Pepin Walking Tour"
+        android:textColor="@color/green"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,27 +37,43 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.183" />
 
-    <Button
-        android:id="@+id/tours"
-        android:layout_width="180dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="180dp"
-        android:text="Tours"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <Button-->
+<!--        android:id="@+id/mydest"-->
+<!--        android:layout_width="180dp"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:layout_marginStart="25dp"-->
+<!--        android:layout_marginLeft="25dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:text="choose dest"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.456"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/feedback" />-->
 
-    <Button
+
+        <Button
+            android:id="@+id/tours"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="140dp"
+            android:text="Tours"
+            android:textColor="@color/brown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.456"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
         android:id="@+id/help"
         android:layout_width="180dp"
-        android:layout_height="70dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="20dp"
         android:text="Help"
+        android:textColor="@color/brown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.456"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,11 +82,12 @@
     <Button
         android:id="@+id/aboutus"
         android:layout_width="180dp"
-        android:layout_height="70dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="20dp"
         android:text="About Us"
+        android:textColor="@color/brown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.456"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,11 +97,12 @@
     <Button
         android:id="@+id/feedback"
         android:layout_width="180dp"
-        android:layout_height="70dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="20dp"
         android:text="Feedback"
+        android:textColor="@color/brown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.456"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,10 +116,13 @@
         android:layout_marginLeft="25dp"
         android:layout_marginTop="20dp"
         android:text="choose dest"
+        android:textColor="@color/brown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.456"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aboutus" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -127,7 +152,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bottom_navigation"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-56dp" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-292dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -118,4 +118,9 @@ I placed all this commented text into the fragment_home.xml file. When you click
         android:layout_above = "@id/bottom_navigation"
         />
 
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/containter" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

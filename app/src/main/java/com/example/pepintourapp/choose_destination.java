@@ -1,6 +1,7 @@
 package com.example.pepintourapp;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.Animation;
@@ -27,10 +28,10 @@ public class choose_destination extends AppCompatActivity {
 
  protected void onCreate(Bundle savedInstanceState){
      super.onCreate(savedInstanceState);
-     setContentView(R.layout.activity_main);
-
+     setContentView(R.layout.choose_destination);
+    // Bundle bundle = getIntent().getExtras();
      initData();
-     dtitle = (TextSwitcher)findViewById(R.id.title);
+     dtitle = findViewById(R.id.title);
      dtitle.setFactory(new ViewSwitcher.ViewFactory() {
          @Override
          public View makeView() {
@@ -63,6 +64,8 @@ public class choose_destination extends AppCompatActivity {
  }
 
  private void initData(){
+     dList.add(new destination("little cabin", "https://sitesandstories.wordpress.com/2011/08/02/looking-for-laura/pepin-cabin-side-view/"));
+     dList.add(new destination("little cabin", "https://sitesandstories.wordpress.com/2011/08/02/looking-for-laura/pepin-cabin-side-view/"));
      dList.add(new destination("little cabin", "https://sitesandstories.wordpress.com/2011/08/02/looking-for-laura/pepin-cabin-side-view/"));
 
  }
