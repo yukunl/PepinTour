@@ -13,8 +13,8 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class destinationAdaptor extends BaseAdapter {
-    private List<destination> destList;
-    private Context dContext;
+     List<destination> destList;
+     Context dContext;
 
     public destinationAdaptor(List<destination> destList, Context dContext) {
         this.destList = destList;
@@ -38,16 +38,18 @@ public class destinationAdaptor extends BaseAdapter {
 
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
-        View rowView = view;
-        if(rowView == null){
-            rowView = LayoutInflater.from(dContext).inflate(R.layout.layout_item,null);
-            TextView name = (TextView) rowView.findViewById(R.id.label);
-            ImageView image = (ImageView) rowView.findViewById(R.id.image);
+        View rootView = view;
+        if(rootView == null){
+            LayoutInflater inflater = LayoutInflater.from(dContext);
+            View itemView = inflater.inflate(R.layout.layout_item,null);
+            TextView name = (TextView) itemView.findViewById(R.id.label);
+            ImageView image = (ImageView) itemView.findViewById(R.id.image);
 
             //Set Data
             Picasso.with(dContext).load(destList.get(position).getImageURL()).into(image);
             name.setText(destList.get(position).getName());
+            return itemView;
         }
-        return rowView;
+        return rootView;
     }
 }

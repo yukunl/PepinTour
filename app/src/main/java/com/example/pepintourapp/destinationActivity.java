@@ -1,68 +1,107 @@
 package com.example.pepintourapp;
 
+import android.os.Bundle;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
+import com.flaviofaria.kenburnsview.KenBurnsView;
+import com.squareup.picasso.Picasso;
 
-import java.io.IOException;
-import java.io.InputStream;
+public class destinationActivity extends AppCompatActivity{
 
-public class destinationActivity extends AppCompatActivity {
+    KenBurnsView dImage;
+    TextView dtitle, description;
 
-    ImageView image;
-    TextView txt;
-    destination currDest = new destination("temp");
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_destination);
 
-        //set image
-        image = (ImageView) findViewById(R.id.imageView);
-        image.setImageResource(currDest.getFileName());
+        dImage = (KenBurnsView) findViewById(R.id.destinationImage);
+        dtitle = (TextView)findViewById(R.id.dname);
+        description = (TextView)findViewById(R.id.description);
 
-        //set text
-        txt = (TextView) findViewById(R.id.textView);
-        //txt.setText("this is trash");
-
-        String text = "N/A";
-        try{
-            InputStream inputStream = getAssets().open("file/t806.txt");
-            int size = inputStream.available();
-            byte[] buffer = new byte[size];
-            inputStream.read(buffer);
-            inputStream.close();
-            text = new String(buffer);
-        } catch (IOException e) {
-            e.printStackTrace();
+        if(getIntent()!= null){
+            int dest_index = getIntent().getIntExtra("destination_index", -1);
+            if(dest_index != -1){
+                loadDestinationDetail(dest_index);
+            }
         }
-        txt.setText(text);
-        //Toast.makeText(getApplicationContext(),text, Toast.LENGTH_LONG).show();
     }
 
-    public void goToDestinations(View view) {
-        //Intent intent = new Intent(this, choose_destination.class);
-        //startActivity(intent);
-        Toast.makeText(this, "go to destination", Toast.LENGTH_SHORT).show();
-    }
+    private void loadDestinationDetail(int index){
+      destination dest = common.dList.get(index);
 
-    public void goToMap(View view) {
-        //implement once map page is made
-        /*
-        * Intent intent = new Intent (this, Main2Activity.class);
-            intent.putExtra("message", s);
-            startActivity(intent);
-         */
-        Toast.makeText(this, "go to map", Toast.LENGTH_SHORT).show();
+      Picasso.with(getBaseContext()).load(dest.getImageURL()).into(dImage);
+      dtitle.setText(dest.getName());
+      description.setText(dest.getDescription());
     }
 }
+
+//import androidx.appcompat.app.AppCompatActivity;
+//
+//import android.content.Intent;
+//import android.os.Bundle;
+//import android.view.View;
+//import android.widget.EditText;
+//import android.widget.ImageView;
+//import android.widget.TextView;
+//import android.widget.Toast;
+//
+//import java.io.IOException;
+//import java.io.InputStream;
+//
+//public class destinationActivity extends AppCompatActivity {
+//
+//    ImageView image;
+//    TextView txt;
+//    destination currDest = new destination("temp");
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//
+//        setContentView(R.layout.activity_destination);
+//
+//        //set image
+//        image = (ImageView) findViewById(R.id.imageView);
+//        image.setImageResource(currDest.getFileName());
+//
+//        //set text
+//        txt = (TextView) findViewById(R.id.textView);
+//        //txt.setText("this is trash");
+//
+//        String text = "N/A";
+//        try{
+//            InputStream inputStream = getAssets().open("file/t806.txt");
+//            int size = inputStream.available();
+//            byte[] buffer = new byte[size];
+//            inputStream.read(buffer);
+//            inputStream.close();
+//            text = new String(buffer);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        txt.setText(text);
+//        //Toast.makeText(getApplicationContext(),text, Toast.LENGTH_LONG).show();
+//    }
+//
+//    public void goToDestinations(View view) {
+//        //Intent intent = new Intent(this, choose_destination.class);
+//        //startActivity(intent);
+//        Toast.makeText(this, "go to destination", Toast.LENGTH_SHORT).show();
+//    }
+//
+//    public void goToMap(View view) {
+//        //implement once map page is made
+//        /*
+//        * Intent intent = new Intent (this, Main2Activity.class);
+//            intent.putExtra("message", s);
+//            startActivity(intent);
+//         */
+//        Toast.makeText(this, "go to map", Toast.LENGTH_SHORT).show();
+//    }
+//}
 
 //package com.example.pepintourapp;
 //

@@ -19,10 +19,11 @@
         app:spacing="0.6" />
 
     <TextSwitcher
-        android:id="@+id/title"
+        android:id="@+id/dtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:color="@color/blue"
         android:layout_centerVertical="true"
         android:layout_marginBottom="368dp"
         android:paddingBottom="16dp" />
@@ -102,7 +103,7 @@
         android:layout_marginStart="278dp"
         android:layout_marginLeft="278dp"
         android:layout_marginTop="133dp"
-        android:onClick="onMoreClick"
+
         android:text="more" />
 
 </RelativeLayout>
