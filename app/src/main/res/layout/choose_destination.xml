@@ -53,7 +53,7 @@
         android:layout_marginStart="115dp"
         android:layout_marginLeft="115dp"
         android:layout_marginTop="149dp"
-        android:text="Name of Desitnation" />
+        android:text="Name of Destination" />
 
     <TextView
         android:id="@+id/hours"
