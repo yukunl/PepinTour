@@ -65,9 +65,9 @@ public class choose_destination extends AppCompatActivity {
 
 /*
  private void initData(){
-     dList.add(new destination("little cabin", "https://sitesandstories.wordpress.com/2011/08/02/looking-for-laura/pepin-cabin-side-view/"));
-     dList.add(new destination("little cabin", "https://sitesandstories.wordpress.com/2011/08/02/looking-for-laura/pepin-cabin-side-view/"));
-     dList.add(new destination("little cabin", "https://sitesandstories.wordpress.com/2011/08/02/looking-for-laura/pepin-cabin-side-view/"));
+     dList.add(new destination("little cabin", "https://media-cdn.tripadvisor.com/media/photo-s/0e/ec/e6/96/always-surprised-how.jpg"));
+     dList.add(new destination("beach", "https://odis.homeaway.com/odis/listing/89ca98ca-6d77-497a-9774-a25f97bf0186.f6.jpg"));
+     dList.add(new destination("cabin", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSXXy1_ipWG-pd8qhjRO43FjbspYn87wZ95KTlSyF6WZ_Vfk7ZP&usqp=CAU"));
 
  }
 */
