@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context="com.example.pepintourapp.MainActivity">
+    tools:context="com.example.pepintourapp.choose_destination">
 
     <it.moondroid.coverflow.components.ui.containers.FeatureCoverFlow
         android:id="@+id/coverFlow"
@@ -102,6 +102,7 @@
         android:layout_marginStart="278dp"
         android:layout_marginLeft="278dp"
         android:layout_marginTop="133dp"
+        android:onClick="onMoreClick"
         android:text="more" />
 
 </RelativeLayout>

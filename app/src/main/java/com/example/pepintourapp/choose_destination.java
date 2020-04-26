@@ -1,11 +1,13 @@
 package com.example.pepintourapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
@@ -21,14 +23,17 @@ public class choose_destination extends AppCompatActivity {
 
     private FeatureCoverFlow coverFlow;
     private destinationAdaptor dAdaptor;
-    private List<destination> dList = new ArrayList<>();
+    public List<destination> dList = new ArrayList<>();
     private TextSwitcher dtitle;
+
+
 
 
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choose_destination);
+
         // Bundle bundle = getIntent().getExtras();
         initData();
         dtitle = findViewById(R.id.title);
@@ -48,6 +53,7 @@ public class choose_destination extends AppCompatActivity {
         dAdaptor = new destinationAdaptor(dList, this);
         coverFlow = (FeatureCoverFlow)findViewById(R.id.coverFlow);
         coverFlow.setAdapter(dAdaptor);
+        //Button moreButton = (Button) super.findViewById(R.id.more);
 
         coverFlow.setOnScrollPositionListener(new FeatureCoverFlow.OnScrollPositionListener() {
             @Override
@@ -61,7 +67,22 @@ public class choose_destination extends AppCompatActivity {
             }
         });
 
+//        moreButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent in = new Intent(getActivity(), destinationActivity.class);
+//                startActivity (in);
+//            }
+//        });
+
     }
+
+    public void onMoreClick(View v){
+        Intent gotoActivity = new Intent(this, destinationActivity.class);
+        startActivity(gotoActivity);
+
+           }
+
 
 
  private void initData(){
