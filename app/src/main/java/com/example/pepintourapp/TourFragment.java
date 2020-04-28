@@ -30,6 +30,7 @@ import com.google.android.gms.maps.StreetViewPanoramaOptions;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.SupportStreetViewPanoramaFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.GroundOverlay;
 import com.google.android.gms.maps.model.GroundOverlayOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
@@ -66,13 +67,8 @@ public class TourFragment extends Fragment implements OnMapReadyCallback {
     private GoogleMap mMap;
     MapView mapView;
     private static final int REQUEST_LOCATION_PERMISSION = 101;
-//
-//    private GoogleMap mMap
-//
-//    SupportMapFragment mapFragment;
-//    public TourFragment() {
-//
-//    }
+    String MAP = "Map";
+    String BLANK = "Blank";
 
 
     /*@Nullable*/
@@ -80,12 +76,37 @@ public class TourFragment extends Fragment implements OnMapReadyCallback {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_tour, container, false);
+        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.fragment_map);
+        //use SuppoprtMapFragment for using in fragment instead of activity  MapFragment = activity   SupportMapFragment = fragment
 
-        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.fragment_map);  //use SuppoprtMapFragment for using in fragment instead of activity  MapFragment = activity   SupportMapFragment = fragment
-        mapFragment.getMapAsync(new OnMapReadyCallback() {
-            @Override
-            public void onMapReady(GoogleMap mMap) {
-                mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        mapFragment.getMapAsync(this);
+        setHasOptionsMenu(true);
+        return v;
+    }
+
+
+//    @Override
+//    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+//        Log.i("FragCreateList","onCreateOptionsMenu called");
+//        super.onCreateOptionsMenu(menu, inflater);
+//        menu.clear();
+//        inflater.inflate(R.menu.map_options, menu);
+//
+//    }
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        Log.i("FragCreateList","onCreateOptionsMenu called");
+        inflater.inflate(R.menu.map_options, menu);
+        super.onCreateOptionsMenu(menu,inflater);
+    }
+
+
+
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+        Log.i("Frag","onMapReady called");
+        LatLng NEWARK = new LatLng(40.714086, -74.228697);
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
                 mMap.clear(); //clear old markers
 
@@ -102,7 +123,7 @@ public class TourFragment extends Fragment implements OnMapReadyCallback {
                         .position(new LatLng(37.4219999, -122.0862462))
                         .title("Marker 1")
                         .icon(BitmapDescriptorFactory.defaultMarker
-                        (BitmapDescriptorFactory.HUE_BLUE)));
+                                (BitmapDescriptorFactory.HUE_BLUE)));
 
                 mMap.addMarker(new MarkerOptions()
                         .position(new LatLng(37.4629101,-122.2449094))
@@ -112,85 +133,24 @@ public class TourFragment extends Fragment implements OnMapReadyCallback {
                 mMap.addMarker(new MarkerOptions()
                         .position(new LatLng(37.3092293,-122.1136845))
                         .title("Captain America"));
-            }
-        });
 
-
-        return v;
-
-
-        /*mapView = (MapView) v.findViewById(R.id.fragment_map);
-        mapView.onCreate(savedInstanceState);*/
-        // SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.fragment_map);
-
-
-        // Gets to GoogleMap from the MapView and does initialization stuff
-        // mapView.getMapAsync(this);
-
-
-        // setHasOptionsMenu(true);
-
-//        mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
-//        if (mapFragment == null) {
-//            FragmentManager fm = getFragmentManager();
-//            FragmentTransaction ft = fm.beginTransaction();
-//            mapFragment = SupportMapFragment.newInstance();
-//            ft.replace(R.id.map, mapFragment).commit();
-//
-//        }
-//        mapFragment.getMapAsync(this);
-        // return v;
-    }
-
-/*    @Override
-    public void onViewCreated ( View view, Bundle savedInstanceState ){
-        mapView = view.findViewById(R.id.hybrid);
-        mapView.onCreate(savedInstanceState);
-        mapView.onResume();
-        mapView.getMapAsync(this);
-
-
-    }*/
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        Log.i("FragCreateList","onCreateOptionsMenu called");
-        super.onCreateOptionsMenu(menu, inflater);
-        menu.clear();
-        inflater.inflate(R.menu.map_options, menu);
-
-    }
-
-
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-
-        LatLng home = new LatLng(45.081329, 7.566367);
-
-
-        float zoom = 15;
-
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(home, zoom));
-
-        GroundOverlayOptions homeOverlay = new GroundOverlayOptions()
-                .image(BitmapDescriptorFactory.fromResource(R.drawable.ic_accessibility_black_24dp))
-
-                .position(home, 100);
-        // 100 = width in meters of the desired overlay
-        mMap.addGroundOverlay(homeOverlay);
 
         setMapLongClick(mMap);
 
-        setPoiClick(mMap);
+       setPoiClick(mMap);
 
-        setInfoWindowClickToPanorama(mMap);
+       setInfoWindowClickToPanorama(mMap);
 
 
         enableMyLocation();
 
+
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Log.i("Frag","onOptionsItemSelected called");
         int id = item.getItemId();
         switch (id) {
             case R.id.normal_map:
@@ -206,7 +166,7 @@ public class TourFragment extends Fragment implements OnMapReadyCallback {
                 mMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
                 return true;
             default:
-                return super.onOptionsItemSelected(item);
+                return false;
 
         }
     }
@@ -222,12 +182,12 @@ public class TourFragment extends Fragment implements OnMapReadyCallback {
                         latLng.longitude);
 
                 map.addMarker(new MarkerOptions()
-                                .position(latLng)
-                                .title(getString(R.string.dropped_pin))
-                                .snippet(snippet)
+                        .position(latLng)
+                        .title(getString(R.string.dropped_pin))
+                        .snippet(snippet)
 
-                                .icon(BitmapDescriptorFactory.defaultMarker
-                                        (BitmapDescriptorFactory.HUE_BLUE))
+                        .icon(BitmapDescriptorFactory.defaultMarker
+                                (BitmapDescriptorFactory.HUE_BLUE))
 
                 );
 
@@ -309,16 +269,4 @@ public class TourFragment extends Fragment implements OnMapReadyCallback {
     }
 
 
-
-
-
-//    @Override
-//    public void onMapReady(GoogleMap googleMap) {
-//        mMap = googleMap;
-//
-//        // Add a marker in Sydney and move the camera
-//        LatLng mansoura = new LatLng(31.037933, 31.381523);
-//        mMap.addMarker(new MarkerOptions().position(mansoura).title("Marker in mansoura"));
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(mansoura));
-//    }
 }
