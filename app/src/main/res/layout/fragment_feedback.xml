@@ -7,17 +7,15 @@
     tools:context=".MainActivity">
 
 
-
-
     <EditText
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="63dp"
+        android:layout_below="@+id/textView10"
+        android:layout_marginTop="41dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="enter name"
+        android:hint="Name"
         android:inputType="textPersonName" />
 
     <EditText
@@ -25,10 +23,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="127dp"
+        android:layout_marginTop="183dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="enter email"
+        android:hint="Email"
         android:inputType="textEmailAddress" />
 
     <EditText
@@ -36,31 +34,68 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="182dp"
+        android:layout_marginTop="226dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="enter subject"
+        android:hint="Subject"
         android:inputType="textEmailSubject" />
 
     <EditText
         android:id="@+id/message"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="479dp"
+        android:layout_height="94dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="239dp"
+        android:layout_marginTop="312dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="enter your message"
+        android:hint="Message"
         android:inputType="text" />
 
     <Button
         android:id="@+id/send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="309dp"
-        android:gravity="center"
+        android:layout_below="@+id/message"
         android:layout_centerHorizontal="true"
-        android:text="Send!" />
+        android:layout_marginTop="59dp"
+        android:gravity="center"
+        android:text="Send" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="182dp"
+        android:layout_height="72dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginRight="110dp"
+        android:gravity="center_horizontal"
+        android:text="Feedback"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="441dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView10"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="-1dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:gravity="center_horizontal"
+        android:text="Feel free to let us know any features or improvements we can make!" />
 
 
 </RelativeLayout>
