@@ -123,23 +123,27 @@ public class TourFragment extends Fragment implements OnMapReadyCallback {
                 .tilt(45)
                 .build();
 
-        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(googlePlex), 10000, null);
+       // mMap.animateCamera(CameraUpdateFactory.newCameraPosition(googlePlex), 10000, null);
+        enableMyLocation();
+        setMapLongClick(mMap);
 
+        setPoiClick(mMap);
 
-        mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(37.4219999, -122.0862462))
-                .title("Marker 1")
-                .icon(BitmapDescriptorFactory.defaultMarker
-                        (BitmapDescriptorFactory.HUE_BLUE)));
-
-        mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(37.4629101, -122.2449094))
-                .title("Marker 2 ")
-                .snippet("His Talent : Plenty of money"));
-
-        mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(37.3092293, -122.1136845))
-                .title("Captain America"));
+        setMaponClick(mMap);
+//        mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(37.4219999, -122.0862462))
+//                .title("Marker 1")
+//                .icon(BitmapDescriptorFactory.defaultMarker
+//                        (BitmapDescriptorFactory.HUE_BLUE)));
+//
+//        mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(37.4629101, -122.2449094))
+//                .title("Marker 2 ")
+//                .snippet("His Talent : Plenty of money"));
+//
+//        mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(37.3092293, -122.1136845))
+//                .title("Captain America"));
 
         // Opening the sharedPreferences object
         sharedPreferences = this.getActivity().getSharedPreferences("location", 0);
@@ -165,20 +169,14 @@ public class TourFragment extends Fragment implements OnMapReadyCallback {
 
                 // Getting the longitude of the i-th location
                 lng = sharedPreferences.getString("lng" + i, "0");
+                Toast.makeText(getActivity().getBaseContext(), lat + "," + lng, Toast.LENGTH_LONG).show();
 
                 // Drawing marker on the map
                 drawMarker(new LatLng(Double.parseDouble(lat), Double.parseDouble(lng)));
             }
 
-            setMapLongClick(mMap);
 
-            setPoiClick(mMap);
-
-            setMaponClick(mMap);
-            setInfoWindowClickToPanorama(mMap);
-
-
-            enableMyLocation();
+            //setInfoWindowClickToPanorama(mMap);
 
 
         }
@@ -252,6 +250,8 @@ public class TourFragment extends Fragment implements OnMapReadyCallback {
     }
 
     private void setMaponClick(final GoogleMap mMap) {
+
+        Log.i("Frag", "setMaponClick");
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
             public void onMapClick(LatLng point) {
@@ -278,7 +278,7 @@ public class TourFragment extends Fragment implements OnMapReadyCallback {
                 /** Saving the values stored in the shared preferences */
                 editor.commit();
 
-               // Toast.makeText(getBaseContext(), "Marker is added to the Map", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(getBaseContext(), "Marker is added to the Map", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -338,7 +338,7 @@ public class TourFragment extends Fragment implements OnMapReadyCallback {
     }
 
     private void drawMarker(LatLng latLng) {
-
+        Log.i("Frag", "draw marker");
         // Creating an instance of MarkerOptions
         MarkerOptions markerOptions = new MarkerOptions();
 
@@ -350,4 +350,4 @@ public class TourFragment extends Fragment implements OnMapReadyCallback {
 
 
     }
-    }
+}

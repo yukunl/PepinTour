@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewSwitcher;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,7 +29,7 @@ public class choose_destination extends AppCompatActivity {
     private destinationAdaptor dAdaptor;
   //  public List<destination> dList = new ArrayList<>();
     private TextSwitcher dtitle;
-
+    private String namedest ;
 
 
 
@@ -78,6 +79,14 @@ public class choose_destination extends AppCompatActivity {
                 Intent intent = new Intent(choose_destination.this, destinationActivity.class);
                 intent.putExtra("destination_index", position);
                 startActivity(intent);
+            }
+        });
+        Button add = findViewById(R.id.button);
+        namedest = ((TextView) findViewById(R.id.description)).getText().toString();
+          add.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Toast.makeText(getBaseContext(), namedest + " is added " , Toast.LENGTH_SHORT ).show();
+
             }
         });
 
