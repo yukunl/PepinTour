@@ -57,7 +57,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/message"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="59dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/feedbackbutton"
         android:gravity="center"
         android:text="Send" />
 
@@ -78,6 +79,7 @@
         android:gravity="center_horizontal"
         android:text="Feedback"
         android:textSize="30dp"
+        android:textColor="#000000"
         android:textStyle="bold" />
 
     <TextView
@@ -95,7 +97,8 @@
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
         android:gravity="center_horizontal"
-        android:text="Feel free to let us know any features or improvements we can make!" />
+        android:text="Feel free to let us know any features or improvements we can make!"
+        android:textStyle="italic"/>
 
 
 </RelativeLayout>
