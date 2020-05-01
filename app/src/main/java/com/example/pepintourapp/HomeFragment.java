@@ -100,7 +100,18 @@ public class HomeFragment extends Fragment  {
                 fr.replace(R.id.fragment_container_home, new FeedbackFragment());
                 fr.commit();
             }
+
         });
+
+//        feedBackButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                FragmentTransaction fr = getFragmentManager().beginTransaction();
+//                fr.replace(R.id.fragment_container_home, new FeedbackFragment());
+//                fr.commit();
+//            }
+//        });
+
 
         chooseDestinationButton.setOnClickListener(new View.OnClickListener() {
             @Override
