@@ -9,7 +9,7 @@
     <it.moondroid.coverflow.components.ui.containers.FeatureCoverFlow
         android:id="@+id/coverFlow"
         android:layout_width="match_parent"
-        android:layout_height="251dp"
+        android:layout_height="264dp"
         app:coverHeight="200dp"
         app:coverWidth="140dp"
         app:maxScaleFactor="1.5"
@@ -18,14 +18,19 @@
         app:scalingThreshold="0.5"
         app:spacing="0.6" />
 
+
     <TextSwitcher
-        android:id="@+id/dtitle"
+        android:id="@+id/destinationTitle"
+        android:layout_below="@+id/coverFlow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:color="@color/blue"
-        android:layout_centerVertical="true"
-        android:layout_marginBottom="368dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="false"
+        android:layout_marginStart="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginBottom="412dp"
         android:paddingBottom="16dp" />
 
     <Button
@@ -37,24 +42,11 @@
         android:layout_alignParentLeft="true"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="false"
-        android:layout_marginStart="110dp"
-        android:layout_marginLeft="110dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="84dp"
         android:layout_marginBottom="363dp"
         android:text="add Destination" />
-
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/coverFlow"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="115dp"
-        android:layout_marginLeft="115dp"
-        android:layout_marginTop="149dp"
-        android:text="Name of Destination" />
 
     <TextView
         android:id="@+id/hours"
@@ -63,9 +55,9 @@
         android:layout_below="@+id/coverFlow"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="47dp"
-        android:layout_marginLeft="47dp"
-        android:layout_marginTop="176dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="153dp"
         android:text="Hours: " />
 
     <TextView
@@ -75,9 +67,9 @@
         android:layout_below="@+id/coverFlow"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="47dp"
-        android:layout_marginLeft="47dp"
-        android:layout_marginTop="218dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginLeft="54dp"
+        android:layout_marginTop="188dp"
         android:text="Address: " />
 
     <TextView
@@ -87,23 +79,18 @@
         android:layout_below="@+id/coverFlow"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="47dp"
-        android:layout_marginLeft="47dp"
-        android:layout_marginTop="258dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginLeft="54dp"
+        android:layout_marginTop="225dp"
         android:text="Contact: " />
 
-    <Button
-        android:id="@+id/more"
-        android:layout_width="107dp"
-        android:layout_height="wrap_content"
-        android:layout_alignWithParentIfMissing="false"
-        android:layout_below="@+id/coverFlow"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="278dp"
-        android:layout_marginLeft="278dp"
-        android:layout_marginTop="133dp"
 
-        android:text="more" />
+<!--    <TextSwitcher-->
+<!--        android:id="@+id/Contactinfo"-->
+<!--        android:layout_right="@+id/Contact"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        />-->
+
 
 </RelativeLayout>

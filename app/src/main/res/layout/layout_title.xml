@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:padding="8dp"
-    android:background="@drawable/label_bg"
+    android:background="@color/green"
     android:gravity="center"
     android:textAppearance="?android:attr/textAppearanceSmallInverse"
     android:layout_alignParentBottom="true"

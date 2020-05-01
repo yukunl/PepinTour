@@ -42,7 +42,7 @@ public class choose_destination extends AppCompatActivity {
         initData();
         dAdaptor = new destinationAdaptor(common.dList, this);
         coverFlow = (FeatureCoverFlow)findViewById(R.id.coverFlow);
-        dtitle = findViewById(R.id.dtitle);
+        dtitle = findViewById(R.id.destinationTitle);
         dtitle.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
@@ -82,9 +82,11 @@ public class choose_destination extends AppCompatActivity {
             }
         });
         Button add = findViewById(R.id.button);
-        namedest = ((TextView) findViewById(R.id.description)).getText().toString();
-          add.setOnClickListener(new View.OnClickListener() {
+        TextView text = (TextView) dtitle.getCurrentView();
+        namedest = text.getText().toString();
+        add.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                Log.i(" destinat name", namedest);
                 Toast.makeText(getBaseContext(), namedest + " is added " , Toast.LENGTH_SHORT ).show();
 
             }
