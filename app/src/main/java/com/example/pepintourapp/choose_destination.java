@@ -100,9 +100,11 @@ public class choose_destination extends AppCompatActivity {
 
 
  private void initData(){
-     common.dList.add(new destination("little cabin", "https://static.wixstatic.com/media/8dcdcf_c34dbfd10b9f4860a47974bdefdfcca2~mv2.jpg", "408 First Street, Private Residence This brick store and residence was built by hardware merchant, Frank Ficker, about 1880, to replace an earlier building"));
-     common.dList.add(new destination("lake","https://lh3.googleusercontent.com/proxy/46YlFxMIsl9CvvF8Xk5gAJ0mXfQAnbahKQjTdhUL2i8N6ac6M8ebG99-634kv6bmHjcxkNl1OGCKmatnp18-Dw", "612 First Street, Private Residence John Fuller, a marine engineer (he maintained and may have manufactured steam engines for riverboats) from Ohio, built this house for his family in 1874."));
-     common.dList.add(new destination("little house", "https://static.wixstatic.com/media/68103f_5e2be2a3ad074bed92dcafe92e4fa272~mv2.jpg", "310 Second Street, Harbor Hill Inn In 1891, when Edith Pfaff married Charles Francies, they had this fine house built next door to her parents. "));
+     common.dList.add(new destination("Laura Ingalls Wilder Museum", "https://live.staticflickr.com/4459/37978714501_d7b75fd7e2_b.jpg", "The Laura Ingalls Wilder Museum features many items Laura and her family would have recognized and recalls the era in which she lived."));
+     common.dList.add(new destination("United Methodist Church","https://faithstreet.s3.amazonaws.com/uploads/church/50083677e412b00d40041dd1/church_image/5229ce4aab9f99f20500009d/medium_a52d48f22a6a28557ec9.jpg", "504 Second Street, United Methodist Church The Methodist church building was built in 1875 to replace the original frame structure which had been built on the same block, over on Pine Street, in 1856."));
+     common.dList.add(new destination("Dougieland Studios Pepin", "https://images.squarespace-cdn.com/content/v1/509d2862e4b05a733d0c6065/1587156549398-3Z8LALV1M81J7YEDCM06/ke17ZwdGBToddI8pDm48kEpVg-ILAPna1wRh-xAJ9fRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpwEv36x-EUL2-BSQ5feDhwGCbXuJBFqZ-erYzVouT8yOb9TwqchglLQOCYTRn7ZGxI/image-asset.jpeg", "402 Second Street, Dougieland Studios The Masonic Lodge built this structure in 1887 to replace the smaller building on First Street. This building was built in the style of the period that Laura�s family would have seen. "));
+     common.dList.add(new destination("Laura Ingalls Wilder Museum", "https://live.staticflickr.com/4459/37978714501_d7b75fd7e2_b.jpg", "The Laura Ingalls Wilder Museum features many items Laura and her family would have recognized and recalls the era in which she lived."));
+     common.dList.add(new destination("404 Pepin Shop", "https://i.pinimg.com/originals/a6/04/97/a604973e1937bc6354a41d103daf2bf7.jpg", "400 First Street, 404 Coffee Shop Isabelle Richards had her boarding house and store built on the lakeshore in about 1880, and it was moved across the street when the railroad was built."));
  }
 
 
