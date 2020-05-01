@@ -65,6 +65,7 @@ public class choose_destination extends AppCompatActivity {
             @Override
             public void onScrolledToPosition(int position) {
                 dtitle.setText(common.dList.get(position).getName());
+                namedest = common.dList.get(position).getName();
             }
 
             @Override
@@ -86,7 +87,7 @@ public class choose_destination extends AppCompatActivity {
         namedest = text.getText().toString();
         add.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Log.i(" destinat name", namedest);
+                Log.i(" destinat", namedest);
                 Toast.makeText(getBaseContext(), namedest + " is added " , Toast.LENGTH_SHORT ).show();
 
             }
