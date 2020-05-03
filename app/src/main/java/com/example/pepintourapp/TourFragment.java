@@ -174,7 +174,7 @@ public class TourFragment extends Fragment implements OnMapReadyCallback {
 
                 // Getting the longitude of the i-th location
                 lng = sharedPreferences.getString("lng" + i, "0");
-                Toast.makeText(getActivity().getBaseContext(), lat + "," + lng, Toast.LENGTH_LONG).show();
+              //  Toast.makeText(getActivity().getBaseContext(), lat + "," + lng, Toast.LENGTH_LONG).show();
 
                 // Drawing marker on the map
                 drawMarker(new LatLng(Double.parseDouble(lat), Double.parseDouble(lng)));

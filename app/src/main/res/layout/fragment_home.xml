@@ -51,28 +51,33 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.183" />
 
-<!--    <Button-->
-<!--        android:id="@+id/mydest"-->
-<!--        android:layout_width="180dp"-->
-<!--        android:layout_height="70dp"-->
-<!--        android:layout_marginStart="25dp"-->
-<!--        android:layout_marginLeft="25dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:text="choose dest"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.456"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/feedback" />-->
+
+
+<!--        <Button-->
+<!--            android:id="@+id/tours"-->
+<!--            android:layout_width="180dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="25dp"-->
+<!--            android:layout_marginLeft="25dp"-->
+<!--            android:layout_marginTop="140dp"-->
+<!--            android:text="Tours"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.456"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            android:background="@drawable/menubutton" />-->
 
 
         <Button
-            android:id="@+id/tours"
+            android:id="@+id/mydest"
             android:layout_width="180dp"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:layout_marginStart="25dp"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="140dp"
-            android:text="Tours"
+            android:text="choose destination"
             android:textColor="@color/white"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -81,70 +86,60 @@
             app:layout_constraintTop_toTopOf="parent"
             android:background="@drawable/menubutton" />
 
+
+
+
         <Button
-        android:id="@+id/help"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="20dp"
-        android:text="help"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tours"
-        android:background="@drawable/menubutton"
+            android:id="@+id/tours"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/menubutton"
+            android:text="Tours"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.456"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mydest" />
+
+
+
+        <Button
+            android:id="@+id/help"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:text="help"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.456"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tours"
+            android:background="@drawable/menubutton"
             android:textSize="20dp" />
 
-    <Button
-        android:id="@+id/aboutus"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="20dp"
-        android:text="About Us"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/help"
-        android:background="@drawable/menubutton"
-        android:textSize="20dp" />
+        <Button
+            android:id="@+id/feedback"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/menubutton"
+            android:text="Feedback"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.456"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/help" />
 
-
-    <Button
-        android:id="@+id/feedback"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="20dp"
-        android:text="Feedback"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mydest"
-        android:background="@drawable/menubutton"
-        android:textSize="20dp" />
-
-    <Button
-        android:id="@+id/mydest"
-        android:layout_width="180dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="20dp"
-        android:text="choose destination"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aboutus"
-        android:background="@drawable/menubutton"
-        android:textSize="20dp" />/>
+        />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

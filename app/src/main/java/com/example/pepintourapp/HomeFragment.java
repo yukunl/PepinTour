@@ -55,7 +55,7 @@ public class HomeFragment extends Fragment  {
         Button tourButton = (Button) v.findViewById(R.id.tours);
         Button helpButton = (Button) v.findViewById(R.id.help);
         Button feedBackButton = (Button) v.findViewById(R.id.feedback);
-        Button aboutUsButton = (Button) v.findViewById(R.id.aboutus);
+       // Button aboutUsButton = (Button) v.findViewById(R.id.aboutus);
 //        Button chooseDestinationButton = (Button)v.findViewById(R.id.mydest);
 //
 //
@@ -118,7 +118,7 @@ public class HomeFragment extends Fragment  {
             public void onClick(View v) {
                 Intent in = new Intent(getActivity(), choose_destination.class);
                 in.putExtra("Some", "random strings for testing");
-                Log.i("tag", "I AM HEREEE!");
+              //  Log.i("tag", "I AM HEREEE!");
                 startActivity (in);
             }
         });

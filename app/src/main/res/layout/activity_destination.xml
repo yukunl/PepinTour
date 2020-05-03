@@ -4,7 +4,6 @@
     xmlns:tools="http://schmas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00a39c"
     tools:context=".destinationActivity">
 
     <com.github.florent37.diagonallayout.DiagonalLayout
