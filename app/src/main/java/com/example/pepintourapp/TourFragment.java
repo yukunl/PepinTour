@@ -274,6 +274,8 @@ public class TourFragment extends Fragment implements OnMapReadyCallback {
 
                 /** Storing the zoom level to the shared preferences */
                 editor.putString("zoom", Float.toString(mMap.getCameraPosition().zoom));
+                Log.i(" desss", Float.toString(mMap.getCameraPosition().zoom));
+
 
                 /** Saving the values stored in the shared preferences */
                 editor.commit();

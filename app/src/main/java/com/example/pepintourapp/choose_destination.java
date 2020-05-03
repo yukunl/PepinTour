@@ -153,8 +153,7 @@ public class choose_destination extends AppCompatActivity {
                 ++locationCount;
 
                 /** Storing the zoom level to the shared preferences */
-                //editor.putString("zoom", Float.toString(mMap.getCameraPosition().zoom));
-
+                editor.putString("zoom", Float.toString(15));
                 /** Saving the values stored in the shared preferences */
                 editor.commit();
 
@@ -193,16 +192,18 @@ public class choose_destination extends AppCompatActivity {
         common.dList.add(new destination("404 Coffee Shop",
                 "https://i.pinimg.com/originals/a6/04/97/a604973e1937bc6354a41d103daf2bf7.jpg",
                 "Isabelle Richards had her boarding house and store built on the lakeshore in about 1880, and it was moved across the street when the railroad was built.",
-                "8:00am - 2:00 pm", "404 1st St, Pepin, WI 54759", "715-215-0132", "-92.14795", "44.4410785" ));
+                "8:00am - 2:00 pm", "404 1st St, Pepin, WI 54759", "715-215-0132",
+                "-92.147576", "44.438727" ));
         common.dList.add(new destination("Pepin Depot Museum",
                 "https://www.wigrr.com/wp-content/uploads/2018/05/pepindepot.jpg",
                 "Built in 1886 on the river side of the Chicago, Burlington and Northern Railroad tracks, opposite #11, the depot was moved to the Laura Ingalls Wilder Park in 1985 and is now a museum of Pepin’s railroad history. ",
-                "10:00am - 4:00pm", "806 Third Street, Pepin, WI 54759", "715-672-5709", "-92.152206", "44.442430" ));
+                "10:00am - 4:00pm", "806 Third Street, Pepin, WI 54759", "715-672-5709",
+                "-92.152292", "44.442122" ));
 
         common.dList.add(new destination("E&S Fresh Market",
                 "https://eandsfreshmarket.com/wp-content/uploads/2019/12/e-and-s-fresh-market-exterior.jpg", "This building was built in 1890 by August Thies when he moved to Pepin’s “new” business district. He had purchased the Philip Pfaff general store on  First Street in 1876. This building was built in the style of the period that Laura’s family would have seen.",
                 "Mon-Fri: 9:00am - 6:00pm\nSaturday 8:30 am - 6:00pm", "410 2nd Street, Pepin, Wisconsin 54759",
-                "715-442-2441", "-92.146680", "44.439710"));
+                "715-442-2441", "-92.147506", "44.439891"));
         common.dList.add(new destination("Harbor Hill Inn", "https://static.wixstatic.com/media/68103f_5e2be2a3ad074bed92dcafe92e4fa272~mv2.jpg/v1/fit/w_2500,h_1330,al_c/68103f_5e2be2a3ad074bed92dcafe92e4fa272~mv2.jpg",
                 "In 1891, when Edith Pfaff married Charles Francies, they had this fine house built next door to her parents.", "8:00am - 4:00pm", "310 Second Street", "612-599-2757", "-92.146177", "44.439573"));
     }
