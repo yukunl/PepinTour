@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -109,6 +110,10 @@ public class TourFragment extends Fragment implements OnMapReadyCallback {
 
 
     public void onMapReady(GoogleMap googleMap) {
+        Toast toast = Toast.makeText(getActivity().getBaseContext(), "Destinations are added from Choose Destination", Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.TOP | Gravity.LEFT, 100, 200);
+                toast.show();
+
         mMap = googleMap;
         Log.i("Frag", "onMapReady called");
         LatLng NEWARK = new LatLng(40.714086, -74.228697);
@@ -117,13 +122,13 @@ public class TourFragment extends Fragment implements OnMapReadyCallback {
         mMap.clear(); //clear old markers
 
         CameraPosition googlePlex = CameraPosition.builder()
-                .target(new LatLng(37.4219999, -122.0862462))
-                .zoom(10)
+                .target(new LatLng(44.4411, -92.1479))
+                .zoom(14)
                 .bearing(0)
                 .tilt(45)
                 .build();
-
-       // mMap.animateCamera(CameraUpdateFactory.newCameraPosition(googlePlex), 10000, null);
+        //mMap.moveCamera( CameraUpdateFactory.newLatLngZoom(new LatLng(44.4411,92.1479) , 14.0f) );
+        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(googlePlex), 10000, null);
         enableMyLocation();
         setMapLongClick(mMap);
 

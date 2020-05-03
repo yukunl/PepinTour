@@ -153,7 +153,7 @@ public class choose_destination extends AppCompatActivity {
                 ++locationCount;
 
                 /** Storing the zoom level to the shared preferences */
-                editor.putString("zoom", Float.toString(15));
+                editor.putString("zoom", "15");
                 /** Saving the values stored in the shared preferences */
                 editor.commit();
 
@@ -184,7 +184,8 @@ public class choose_destination extends AppCompatActivity {
         common.dList.add(new destination("Dougieland Studios Pepin",
                 "https://images.squarespace-cdn.com/content/v1/509d2862e4b05a733d0c6065/1587156549398-3Z8LALV1M81J7YEDCM06/ke17ZwdGBToddI8pDm48kEpVg-ILAPna1wRh-xAJ9fRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpwEv36x-EUL2-BSQ5feDhwGCbXuJBFqZ-erYzVouT8yOb9TwqchglLQOCYTRn7ZGxI/image-asset.jpeg",
                 "The Masonic Lodge built this structure in 1887 to replace the smaller building on First Street. This building was built in the style of the period that Laura's family would have seen. ",
-                "11:00am - 5:00 pm", "402 Second Street, Pepin, WI, 54759", "www.dougiepadilla.com", "-92.146680", "44.439710"));
+                "11:00am - 5:00 pm", "402 Second Street, Pepin, WI, 54759", "www.dougiepadilla.com",
+                "-92.146680", "44.439710"));
         common.dList.add(new destination("Harbor View Cafe",
                 "https://chindeep.com/wp-content/uploads/2008/05/exterior-dsc_0024.jpg",
                 "The oldest part of this building dates back to the 19th century. There was an inn on this corner as early as the 1850s, but early accounts suggest that the original building was replaced in the 1890s. Along the lakeshore, were the general store of Patrick McInerney and the residence and livery stable of P.N. Tuttle family.",
