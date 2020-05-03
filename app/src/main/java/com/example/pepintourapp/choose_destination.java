@@ -1,6 +1,7 @@
 package com.example.pepintourapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,11 +14,8 @@ import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewSwitcher;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.gms.common.internal.service.Common;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +27,8 @@ public class choose_destination extends AppCompatActivity {
     private destinationAdaptor dAdaptor;
   //  public List<destination> dList = new ArrayList<>();
     private TextSwitcher dtitle;
-    private String namedest ;
+    private String namedest, longtitude, latitude ;
+    private int locationCount =0;
 
 
 
@@ -66,6 +65,8 @@ public class choose_destination extends AppCompatActivity {
             public void onScrolledToPosition(int position) {
                 dtitle.setText(common.dList.get(position).getName());
                 namedest = common.dList.get(position).getName();
+                longtitude = common.dList.get(position).getlong();
+                latitude = common.dList.get(position).getlat();
             }
 
             @Override
@@ -85,10 +86,33 @@ public class choose_destination extends AppCompatActivity {
         Button add = findViewById(R.id.button);
         TextView text = (TextView) dtitle.getCurrentView();
         namedest = text.getText().toString();
+
         add.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Log.i(" destinat", namedest);
                 Toast.makeText(getBaseContext(), namedest + " is added " , Toast.LENGTH_SHORT ).show();
+                /** Opening the editor object to write data to sharedPreferences */
+                SharedPreferences sharedPreferences = getSharedPreferences("location", 0);
+
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                // Storing the latitude for the i-th location
+                editor.putString("lat"+ Integer.toString((locationCount)), latitude);
+
+                // Storing the longitude for the i-th location
+                editor.putString("lng"+ Integer.toString((locationCount)), longtitude);
+                Log.i(" destinat", latitude);
+                Log.i(" destinat", longtitude);
+
+                // Storing the count of locations or marker count
+                editor.putInt("locationCount", locationCount);
+                ++locationCount;
+
+                /** Storing the zoom level to the shared preferences */
+                //editor.putString("zoom", Float.toString(mMap.getCameraPosition().zoom));
+
+                /** Saving the values stored in the shared preferences */
+                editor.commit();
 
             }
         });
@@ -112,11 +136,15 @@ public class choose_destination extends AppCompatActivity {
 
 
  private void initData(){
-     common.dList.add(new destination("Laura Ingalls Wilder Museum", "https://live.staticflickr.com/4459/37978714501_d7b75fd7e2_b.jpg", "The Laura Ingalls Wilder Museum features many items Laura and her family would have recognized and recalls the era in which she lived."));
-     common.dList.add(new destination("United Methodist Church","https://faithstreet.s3.amazonaws.com/uploads/church/50083677e412b00d40041dd1/church_image/5229ce4aab9f99f20500009d/medium_a52d48f22a6a28557ec9.jpg", "504 Second Street, United Methodist Church The Methodist church building was built in 1875 to replace the original frame structure which had been built on the same block, over on Pine Street, in 1856."));
-     common.dList.add(new destination("Dougieland Studios Pepin", "https://images.squarespace-cdn.com/content/v1/509d2862e4b05a733d0c6065/1587156549398-3Z8LALV1M81J7YEDCM06/ke17ZwdGBToddI8pDm48kEpVg-ILAPna1wRh-xAJ9fRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpwEv36x-EUL2-BSQ5feDhwGCbXuJBFqZ-erYzVouT8yOb9TwqchglLQOCYTRn7ZGxI/image-asset.jpeg", "402 Second Street, Dougieland Studios The Masonic Lodge built this structure in 1887 to replace the smaller building on First Street. This building was built in the style of the period that Laura�s family would have seen. "));
-     common.dList.add(new destination("Laura Ingalls Wilder Museum", "https://live.staticflickr.com/4459/37978714501_d7b75fd7e2_b.jpg", "The Laura Ingalls Wilder Museum features many items Laura and her family would have recognized and recalls the era in which she lived."));
-     common.dList.add(new destination("404 Pepin Shop", "https://i.pinimg.com/originals/a6/04/97/a604973e1937bc6354a41d103daf2bf7.jpg", "400 First Street, 404 Coffee Shop Isabelle Richards had her boarding house and store built on the lakeshore in about 1880, and it was moved across the street when the railroad was built."));
+     common.dList.add(new destination("Laura Ingalls Wilder Museum", "https://i.imgur.com/tGbaZCY.jpg", "The Laura Ingalls Wilder Museum features many items Laura and her family would have recognized and recalls the era in which she lived.", "-88.401950", "41.917220"));
+     common.dList.add(new destination("United Methodist Church","https://faithstreet.s3.amazonaws.com/uploads/church/50083677e412b00d40041dd1/church_image/5229ce4aab9f99f20500009d/medium_a52d48f22a6a28557ec9.jpg", "504 Second Street, United Methodist Church The Methodist church building was built in 1875 to replace the original frame structure which had been built on the same block, over on Pine Street, in 1856.", "-88.672249", "37.019260"));
+     common.dList.add(new destination("Dougieland Studios Pepin", "https://images.squarespace-cdn.com/content/v1/509d2862e4b05a733d0c6065/1587156549398-3Z8LALV1M81J7YEDCM06/ke17ZwdGBToddI8pDm48kEpVg-ILAPna1wRh-xAJ9fRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpwEv36x-EUL2-BSQ5feDhwGCbXuJBFqZ-erYzVouT8yOb9TwqchglLQOCYTRn7ZGxI/image-asset.jpeg", "402 Second Street, Dougieland Studios The Masonic Lodge built this structure in 1887 to replace the smaller building on First Street. This building was built in the style of the period that Laura�s family would have seen. ", "-92.146680", "44.439710"));
+     common.dList.add(new destination(" E&S Fresh marke", "https://eandsfreshmarket.com/wp-content/uploads/2019/12/e-and-s-fresh-market-exterior.jpg", "This building was built in 1890 by August Thies when he\n" +
+             "moved to Pepin’s “new” business district. He had purchased\n" +
+             "the Philip Pfaff general store on First Street in 1876. This\n" +
+             "building was built in the style of the period that Laura’s\n" +
+             "family would have seen.\n", "-92.146680", "44.439710"));
+     common.dList.add(new destination("404 Pepin Shop", "https://i.pinimg.com/originals/a6/04/97/a604973e1937bc6354a41d103daf2bf7.jpg", "400 First Street, 404 Coffee Shop Isabelle Richards had her boarding house and store built on the lakeshore in about 1880, and it was moved across the street when the railroad was built.", "-92.14795", "44.4410785"));
  }
 
 

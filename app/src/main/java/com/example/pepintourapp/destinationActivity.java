@@ -31,7 +31,6 @@ public class destinationActivity extends AppCompatActivity{
                 loadDestinationDetail(dest_index);
             }
         }
-
     }
 
     private void loadDestinationDetail(int index){
