@@ -1,20 +1,6 @@
 # PepinTour
-town of pepin walking app
+Welcome to the PepinTour app. We hope to guide you around historic buildings in Pepin, Wisconsin, the birthplace of Laura Ingalls Wilder, author of Little House in the Big Woods. 
 
+This app features destination suggestions and tour guiding. For more details please refer to Mobile App proposal
 
-Choose Destination Page Cover flow related Files:
-  - java: choose_destination
-          destination
-          destinationAdaptor (have issue)
-  - res: 
-       - anim 
-         slide_in_top
-         slide_out_bottom
-       - drawable
-         label_bg
-         selector_bg
-       - layout
-         choose_destination
-         layout_item
-         layout_item
-   - changed build.gradle
+This app is developed by Students @ UW-Madison: Katy Dong, Ismael Jaffri, Drew Huang, Yukun Li
