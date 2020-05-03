@@ -40,12 +40,19 @@
         android:layout_below="@+id/coverFlow"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_centerVertical="false"
         android:layout_marginStart="118dp"
         android:layout_marginLeft="114dp"
         android:layout_marginTop="84dp"
+        android:layout_marginEnd="118dp"
+        android:layout_marginRight="118dp"
         android:layout_marginBottom="363dp"
-        android:text="add Destination" />
+        android:background="@drawable/choosebutton"
+        android:text="add Destination"
+        android:textSize="10dp"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/hours"
